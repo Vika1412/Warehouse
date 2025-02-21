@@ -26,7 +26,8 @@ public class ExampleRestController {
     @GetMapping(value = "/", produces = "application/json")
     private ResponseEntity<?> getList() {
         String sSQL = "SELECT * FROM examples";
-        return ResponseEntity.ok(template.queryForList(sSQL));
+        List<Map<String, Object>> maps = template.queryForList(sSQL);
+        return ResponseEntity.ok(maps);
     }
 
     @PostMapping(value = "/add", produces = "application/json")
