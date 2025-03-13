@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 const ReactComponentWithRestExample = () => {
-    const [name, setName] = useState('');
+    const [login, setLogin] = useState('');
     const [date, setDate] = useState('');
     const [someId, setSomeId] = useState('');
 
@@ -32,7 +32,7 @@ const ReactComponentWithRestExample = () => {
         console.log('submit');
         return fetch("/api/example/add", {
             "headers": {"content-type": "application/json"},
-            "body": JSON.stringify([{"name": name, "some_id": +someId, "date": date}]),
+            "body": JSON.stringify([{"login": login, "some_id": +someId, "date": date}]),
             "method": "POST"
         });
     }
@@ -43,14 +43,14 @@ const ReactComponentWithRestExample = () => {
                 return (
                     <p style={{marginBottom: '10px'}} key={index}>
                         <b>id: {row.id}</b><br/>
-                        <b>some_id: {row.some_id}</b><br/>
-                        <b>name: {row.name}</b><br/>
+                        <b>password: {row.password}</b><br/>
+                        <b>login: {row.login}</b><br/>
                         <b>date: {row.date}</b><br/>
                     </p>
                 );
             })}
             <hr/>
-            Name: <input value={name} onChange={event => setName(event.target.value)}/>
+            Name: <input value={login} onChange={event => setLogin(event.target.value)}/>
             Some_id: <input value={someId} onChange={event => setSomeId(event.target.value)}/>
             Date: <input value={date} onChange={event => setDate(event.target.value)}/><br />
             <button onClick={event => {

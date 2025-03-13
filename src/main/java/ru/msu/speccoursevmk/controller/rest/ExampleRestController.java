@@ -25,7 +25,7 @@ public class ExampleRestController {
 
     @GetMapping(value = "/", produces = "application/json")
     private ResponseEntity<?> getList() {
-        String sSQL = "SELECT * FROM examples";
+        String sSQL = "SELECT * FROM obj_users";
         List<Map<String, Object>> maps = template.queryForList(sSQL);
         return ResponseEntity.ok(maps);
     }
@@ -33,8 +33,8 @@ public class ExampleRestController {
     @PostMapping(value = "/add", produces = "application/json")
     private ResponseEntity<?> addToList(@RequestBody List<Map<String, Object>> list) {
         for (Map<String, Object> data : list) {
-            String sSQL = "INSERT INTO examples (name, some_id, date) VALUES (?, ?, ?::TIMESTAMPTZ)";
-            template.update(sSQL, data.get("name"), data.get("some_id"), data.get("date"));
+            String sSQL = "INSERT INTO obj_users (login, password, fio, role) VALUES (?, ?, ?, ?)";
+            template.update(sSQL, data.get("login"), data.get("password"), data.get("fio"), data.get("role"));
         }
         return ResponseEntity.ok().build();
     }
