@@ -11,7 +11,7 @@ const FirstReactComponent = () => {
             <p>Hello Molnet: {val}</p>
             <input value={val} onChange={event => setVal(event.target.value)}/>
 
-            {/* Помотреть
+            {/* Посмотреть
             <img src="warehouse.jpg" alt="Склад"></img>
             <FontAwesomeIcon icon={faPlus} />*/}
         </div>

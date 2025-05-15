@@ -1,27 +1,52 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <head>
+        <title>Getting Started: Serving Web Content</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link href="/build/speccourse/speccourse.css" rel="stylesheet" type="text/css"/>
+        <style>
+            body {
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
 
-    <link href="/build/speccourse/speccourse.css" rel="stylesheet" type="text/css"/>
-</head>
-<body>
-<p>Hello world</p>
-<p>Hello Molnet</p>
+            .nav-bar {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                padding: 10px;
+                background-color: #ffffff;
+                border-bottom: 1px solid #ccc;
+            }
 
-<div>
-    <a href="api/equipment/list">Equipment list</a>
-</div>
-<div>
-    <a href="api/equipment/nomenclatures">Nomenclature list</a>
-</div>
-<div>
-    <a href="api/requests/list">Requests list</a>
-</div>
+            .nav-bar a {
+                text-decoration: underline;
+                color: blue;
+                font-weight: bold;
+            }
 
+            .footer-text {
+                text-align: center;
+                margin-top: 50px;
+                color: blue;
+                font-size: 32px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+<!--    <div class="nav-bar">-->
+<!--&lt;!&ndash;        <a href="api/equipment/list">Equipment list</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        <a href="api/equipment/nomenclatures">Nomenclature list</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        <a href="api/requests/list">Requests list</a>&ndash;&gt;-->
+<!--    </div>-->
 
-<div id="root"></div>
-<script src="/build/speccourse/speccourse.bundle.js" type="text/javascript" charset="utf-8"></script>
-</body>
+    <div id="root"></div>
+
+    <p class="footer-text">Molnet</p>
+
+    <script src="/build/speccourse/speccourse.bundle.js" type="text/javascript" charset="utf-8"></script>
+    </body>
 </html>
